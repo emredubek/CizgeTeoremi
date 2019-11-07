@@ -1,0 +1,53 @@
+#include<stdio.h>
+#define n 3
+
+int main()
+{
+	int dizi[n][n];
+	int i,j,top,d[n],max,min;
+	
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<n;j++)
+		{
+			if(i==j)
+			{
+				dizi[i][j]=0;
+			}
+			else
+			{
+				printf("%d ve %d tepelerine komsuluk bilgisi gir\n",i+1,j+1);
+				scanf("%d",&dizi[i][j]);
+			}
+		}
+	}
+	for(i=0;i<n;i++)
+	{
+		top=0;
+		for(j=0;j<n;j++)
+		{
+			top+=dizi[i][j];
+		}
+			printf("%d tepesinin derecesi = %d\n",i+1,top);
+		d[i]=top;
+	}
+	min=d[0];
+	for(i=0;i<0;i++)
+	{
+		if(d[i]<min)
+		{
+			min=d[i];
+		}
+	}
+	printf("cizgenin minimum tepe derecesi = %d\n",min);
+	
+	max=d[0];
+	for(i=0;i<n;i++)
+	{
+		if(d[i]>max)
+		{
+			max=d[i];
+		}
+	}
+	printf("cizgenin maximum tepe derecesi = %d\n",max);
+}
